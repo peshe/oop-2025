@@ -7,7 +7,6 @@ struct A
 {
     int c;
     char b;
-    // 3 B padding
     int a;
 };
 
@@ -15,7 +14,6 @@ struct B
 {
     int a;
     char b;
-    // 3 B padding
 };
 
 struct C
