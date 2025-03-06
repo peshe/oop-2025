@@ -2,13 +2,13 @@
 
 
 
-void print(int          number);
-void print(double       number);
-void print(std::string  number);
+void print(const int&           );
+void print(const double&        );
+void print(const std::string&   );
 
 
 
-int sum(int a = 2,  int b = 2,  int c = 2);
+int sum(int a = 1,  int b = 2,  int c = 3);
 
 
 
@@ -29,15 +29,15 @@ int main() {
 
 
 
-void print(int number) {
+void print(const int& number) {
     std::cout << "Integer number: " << number << std::endl;
 }
 
-void print(double number) {
+void print(const double& number) {
     std::cout << "Double number: " << number << std::endl;
 }
 
-void print(std::string number) {
+void print(const std::string& number) {
     std::cout << "String number: " << number << std::endl;
 }
 

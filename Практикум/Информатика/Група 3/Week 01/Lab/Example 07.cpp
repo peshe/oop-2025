@@ -3,8 +3,8 @@
 
 
 enum class Day {
-    Saturday,
-    Sunday  ,
+    Saturday,   // 0
+    Sunday  ,   // 1
 };
 
 enum class Color : char {
@@ -12,6 +12,22 @@ enum class Color : char {
     GREEN   =   'g',
     BLUE    =   'b',
 };
+
+/*
+
+enum SimpleColor {
+    RED = 3,
+    GREEN = 1,
+    BLUE = 5,
+};
+
+enum SpecialColor {
+    RED,
+    BLACK,
+    WHITE,
+};
+
+*/
 
 
 
@@ -23,6 +39,8 @@ int main() {
     
     Color color = Color::RED;
 
+    // std::cout << "RED Value is: " << RED << std::endl;
+
     if (color == Color::RED) {
         std::cout << "Hello, World!" << std::endl;
     }
@@ -31,11 +49,11 @@ int main() {
     // Day day =    0;  Error!
     // Day day =    1;  Error!
     
-    Day day = (Day)(1);
+    Day day = static_cast<Day>(1);
 
     // std::cout << day;    Error!
 
-    std::cout << (int)(day) << std::endl;
+    std::cout << static_cast<int>(day) << std::endl;
 
 
     return 0;

@@ -34,13 +34,17 @@ namespace NamespaceB {
 }
 
 
-
 using namespace NamespaceA;
 using namespace NamespaceB;
 
 
 
+constexpr int a = 0;
+
+
+
 int main() {
+
     std::cout << "Namespace A, I: " << NamespaceA::i << std::endl;
 
     std::cout << "Namespace B, I: " << NamespaceB::i << std::endl;
@@ -56,6 +60,8 @@ int main() {
     std::cout << "Namespace B, Number 2: " << NamespaceB::number2 << std::endl;
     std::cout << "Namespace B, Number 3: " << NamespaceB::number3 << std::endl;
     std::cout << "Namespace B, Number 4: " << NamespaceB::number4 << std::endl;
+
+    std::cout << "Variable is: " << ::a << std::endl;
 
     return 0;
 }

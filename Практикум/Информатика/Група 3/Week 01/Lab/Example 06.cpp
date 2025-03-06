@@ -14,6 +14,8 @@ enum Card {
     WHITE_CARD  = 1,
 };
 
+// warning: comma at end of enumerator list [-Wpedantic]
+
 
 
 const char* colors[3] = { "RED", "BLACK", "WHITE" };
@@ -36,6 +38,7 @@ int main() {
     Color blackColor    =   Color::BLACK;
     Color whiteColor    =   Color::WHITE;
 
+
     if (redColor == Color::RED) {
         std::cout << "We are RED!" << std::endl;
     }
@@ -49,7 +52,7 @@ int main() {
     }
 
 
-    Color color = (Color)(1);
+    Color color = static_cast<Color>(1);
 
     std::cout << "Dummy Color: " << color << std::endl;
     
