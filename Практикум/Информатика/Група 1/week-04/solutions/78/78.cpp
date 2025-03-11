@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <cstdint>
-#include <climits>
-#include <cstring>
 
 void copy(std::ifstream& src, std::ofstream& dst)
 {
