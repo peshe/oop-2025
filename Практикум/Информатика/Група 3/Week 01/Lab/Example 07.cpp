@@ -16,15 +16,15 @@ enum class Color : char {
 /*
 
 enum SimpleColor {
-    RED = 3,
-    GREEN = 1,
-    BLUE = 5,
+    RED     ,
+    GREEN   ,
+    BLUE    ,
 };
 
 enum SpecialColor {
-    RED,
-    BLACK,
-    WHITE,
+    RED     ,
+    BLACK   ,
+    WHITE   ,
 };
 
 */
