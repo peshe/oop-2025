@@ -140,6 +140,8 @@ bool removeDeadStatic(const char *filename)
 //             writeCharacterBinaryWithDynamicSizeOpenStream(temp, &ch);
 //             newNumPeople++;
 //         }
+//         delete[] ch.name;
+//         delete ch.weapon;
 //     }
 //     temp.seekp(0, std::ios::beg);
 //     temp.write(reinterpret_cast<char *>(&newNumPeople), sizeof(newNumPeople));
