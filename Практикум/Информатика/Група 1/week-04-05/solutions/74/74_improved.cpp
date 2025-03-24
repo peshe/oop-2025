@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <new>
 #include <filesystem>
+#include <cstdlib>
+#include <ctime>
 
 size_t fileSize(std::fstream& file) {
 	file.seekg(0, std::ios::end);
@@ -68,6 +70,8 @@ void merge(std::fstream& file, std::fstream& leftFile, std::fstream& rightFile) 
 
 int main(int argc, char** argv)
 {
+	std::srand(std::time(nullptr)); // seed for std::rand()
+
 	if(argc != 2)
 	{
 		std::cerr << "Usage: " << (argv[0] ? argv[0] : "<program name>") << " <file to sort>\n";
