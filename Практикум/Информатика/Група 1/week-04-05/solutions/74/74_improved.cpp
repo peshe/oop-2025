@@ -1,3 +1,4 @@
+#include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <cstdint>
@@ -25,7 +26,7 @@ void random_hexnumber(char* buf, size_t chars)
 	static const char charset[] = "0123456789ABCDEF";
 	constexpr std::size_t charset_len = sizeof(charset) / sizeof(charset[0]) - 1;
 	for(std::size_t i = 0; i < chars; i++)
-		buf[i] = charset[rand() % charset_len];
+		buf[i] = charset[std::rand() % charset_len];
 	buf[chars] = '\0';
 }
 
