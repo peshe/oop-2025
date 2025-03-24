@@ -30,7 +30,6 @@ void random_hexnumber(char* buf, size_t chars)
 bool createTemporary(std::fstream& file) {
 	char temp_name[64];
 	random_hexnumber(temp_name, 32);
-	random_hexnumber(temp_name, 32);
 	file.open(temp_name, std::ios::in | std::ios::out | std::ios::binary | std::ios::trunc);
 	std::filesystem::remove(temp_name);
 	return (bool)file;
