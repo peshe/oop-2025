@@ -1,6 +1,3 @@
-// Автор: Петър Дойнов
-
-#include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <cstdint>
