@@ -1,1 +1,1 @@
-add_executable(raii raii.cpp)
+add_executable(person main.cpp person.cpp)
