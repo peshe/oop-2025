@@ -1,0 +1,4 @@
+Sedan 22/01/2006 Volkswagen 150 4
+Kombi 02/05/2012 Mazda 160 5
+Hatchback 30/01/1995 Honda 100 3
+Sedan 30/01/1995 Nissan 250 2
