@@ -12,7 +12,7 @@ Operator meaning on the built-in types cannot be changed.**
   указател,
   :: - оператор за присъединяване,
   ?: - тернарен оператор
-  ![operators](.\img\image.png)
+  ![operators](img/image.png)
 
 ## Задачи
 
