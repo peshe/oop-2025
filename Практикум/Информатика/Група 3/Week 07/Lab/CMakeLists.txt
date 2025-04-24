@@ -1,0 +1,1 @@
+add_executable(family main.cpp family.cpp person.cpp)
