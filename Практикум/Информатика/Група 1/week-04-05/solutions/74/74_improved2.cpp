@@ -30,10 +30,10 @@ void random_hexnumber(char* buf, size_t chars)
 
 bool createTemporary(std::fstream& file, const char* name) {
 	file.open(name, std::ios::in | std::ios::out | std::ios::binary | std::ios::trunc);
-	std::filesystem::remove(name);
 	if(!file) {
 		return false;
 	}
+	std::filesystem::remove(name);
 	return true;
 }
 
