@@ -1,0 +1,22 @@
+7 2000
+Samsung
+Washing machine
+800
+LG
+Microwave oven
+1200
+Philips
+Hair Dryer
+600
+Bosch
+Dishwasher
+1500
+Sony
+Television
+400
+Apple
+Phone Charger
+20
+HP
+Laptop Charger
+90
