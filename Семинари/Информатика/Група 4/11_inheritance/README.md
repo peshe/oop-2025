@@ -151,9 +151,9 @@ class Derived : public Base {
 Ако си дефинираме наш:
 
 ```cpp
-Derived(const Derived& other) {
+Derived& operator=(const Derived& other) {
     if(this != &other) {
-        Base::operator=(d); // Преизползваме, а не пишем ръчно!
+        Base::operator=(other); // Преизползваме, а не пишем ръчно!
         //...
     }
     return *this;
