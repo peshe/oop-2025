@@ -1,0 +1,6 @@
+5
+circle (5, 2) 3
+rectangle (1, 5) 7 6
+circle (0, 0) 13
+filled (5, 2) 3 black
+rectangle (1, 0) 1 2
