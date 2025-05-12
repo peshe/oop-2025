@@ -32,8 +32,7 @@ public:
 void try_add_to_bookshelf(BookShelf& bs, BookVector& books)
 {
 	std::cout << "Not added:\n";
-	for(std::size_t i = 0; i < books.size(); i++)
-		try
+	for(std::size_t i = 0; i < books.size(); i++) try
 	{
 		bs.add(*books[i]);
 	}
