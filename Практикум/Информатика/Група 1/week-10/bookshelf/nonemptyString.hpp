@@ -20,4 +20,8 @@ public:
 
 	std::ostream& print(std::ostream& os) const;
 	std::istream& read(std::istream& is);
+
+	const char* c_str() const { return str; }
 };
+
+bool operator==(const NonemptyString& lhs, const NonemptyString& rhs);

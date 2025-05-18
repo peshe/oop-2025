@@ -6,7 +6,6 @@
 
 #include "nonemptyString.hpp"
 
-
 class BookShelf;
 
 class Book
@@ -46,5 +45,8 @@ public:
 	std::ostream& print(std::ostream& os) const;
 	std::istream& read(std::istream& is);
 
+	static Book read_book(std::istream& is);
+
 	void remove_from_shelf();
+	void place_on(BookShelf& bs);
 };

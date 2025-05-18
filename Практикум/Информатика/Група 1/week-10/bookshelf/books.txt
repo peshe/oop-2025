@@ -1,0 +1,42 @@
+6
+title1
+7
+author1
+50
+IS-INF-0000
+Not placed on a bookshelf
+6
+title2
+7
+author1
+880
+IS-INF-0000
+Not placed on a bookshelf
+6
+title3
+7
+author1
+80
+IS-INF-0000
+Not placed on a bookshelf
+8
+Рана
+7
+author1
+50
+IS-INF-0000
+Not placed on a bookshelf
+6
+title5
+7
+author1
+50
+IS-INF-0000
+placed on row: 2; ind: 1
+6
+title6
+7
+author1
+50
+IS-INF-0000
+Not placed on a bookshelf

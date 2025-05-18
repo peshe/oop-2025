@@ -39,8 +39,16 @@ std::istream& NonemptyString::read(std::istream& is)
 {
 	std::size_t sz;
 	is >> sz;
+	if(!is) return is;
+	is.ignore();
 	NonemptyString tmp(sz, '\0');
 	is.read(tmp.str, sz);
+	is.ignore();
 	*this = std::move(tmp);
 	return is;
+}
+
+bool operator==(const NonemptyString& lhs, const NonemptyString& rhs)
+{
+	return std::strcmp(lhs.c_str(), rhs.c_str()) == 0;
 }
