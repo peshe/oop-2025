@@ -93,6 +93,10 @@ public:
 	{
 		return health;
 	}
+	const std::string& Name() const noexcept
+	{
+		return name;
+	}
 	virtual std::ostream& print(std::ostream& os) const
 	{
 		os << "Health: " << health << '\n';
@@ -181,11 +185,9 @@ public:
 	}
 };
 
-typedef std::vector<Player*> PlayerVector;
-
 class Necromancer: public Mage
 {
-	PlayerVector destroyed_players;
+	std::vector<Player*> destroyed_players;
 
 	void deallocate()
 	{
@@ -233,15 +235,91 @@ public:
 	Necromancer(Necromancer&& other) = default;
 };
 
-int main()
+constexpr std::size_t invalid_ind = -1;
+
+class PlayerCollection
+{
+	std::vector<Player*> players;
+
+	void deallocate()
+	{
+		for(std::size_t i = 0; i < players.size(); i++)
+			delete players[i];
+	}
+
+	std::size_t find(const std::string& player_name) const
+	{
+		for(std::size_t i = 0; i < players.size(); i++)
+			if(players[i]->Name() == player_name)
+				return i;
+		return invalid_ind;
+	}
+public:
+	PlayerCollection() = default;
+	~PlayerCollection()
+	{
+		deallocate();
+	}
+	PlayerCollection(const PlayerCollection&) = delete;
+	PlayerCollection& operator=(const PlayerCollection&) = delete;
+
+	void add(Player& p)
+	{
+		if(find(p.Name()) != invalid_ind)
+			throw std::invalid_argument("player with the same name already exists in the collection");
+		players.push_back(p.clone());
+	}
+
+	Player& operator[](std::size_t ind)
+	{
+		return *players[ind];
+	}
+	const Player& operator[](std::size_t ind) const
+	{
+		return *players[ind];
+	}
+
+	Player& at(std::size_t ind)
+	{
+		return *players.at(ind);
+	}
+	const Player& at(std::size_t ind) const
+	{
+		return *players.at(ind);
+	}
+
+	std::size_t size() const noexcept
+	{
+		return players.size();
+	}
+	void erase(const std::string& player_name)
+	{
+		std::size_t ind = find(player_name);
+		if(ind == invalid_ind)
+			throw std::invalid_argument("player not found");
+		players.erase(players.begin() + ind);
+	}
+};
+
+int main() try
 {
 	std::srand(std::time(nullptr));
 
-	Mage m(1000, "", {0,0}, Weapon::AXE, 50, "asd", 0.3);
-	Warrior w(10000, "", {-1,0}, Weapon::AXE, 10, 300);
+	Mage m(1000, "mage1", {0,0}, Weapon::AXE, 50, "asd", 0.3);
+	Warrior w(10000, "warrior1", {-1,0}, Weapon::AXE, 10, 20);
 
-	w.handle_attack(m);
-	w.print(std::cout);
-	m.print(std::cout);
+	PlayerCollection pc;
+	pc.add(m);
+	pc.add(w);
+
+	pc[1].handle_attack(pc[0]);
+
+	pc[0].print(std::cout);
+	pc[1].print(std::cout);
 	return 0;
+}
+catch(const std::exception& e)
+{
+	std::cerr << e.what() << '\n';
+	return 1;
 }
